@@ -1,0 +1,35 @@
+{
+  "name": "traversing-nested-objects",
+  "version": "0.1.0",
+  "description": "Practice looping through nested objects",
+  "engines": {
+    "node": "6.x",
+    "npm": "3.x"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R mocha-multi --reporter-options nyan=-,json=.results.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/learn-co-curriculum/traversing-nested-objects.git"
+  },
+  "keywords": [
+    "javascript",
+    "flatiron",
+    "learn"
+  ],
+  "author": "pletcher",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "bugs": {
+    "url": "https://github.com/learn-co-curriculum/traversing-nested-objects/issues"
+  },
+  "homepage": "https://github.com/learn-co-curriculum/traversing-nested-objects#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "jsdom": "^9.1.0",
+    "mocha": "^2.4.5",
+    "mocha-jsdom": "^1.1.0",
+    "mocha-multi": "^0.9.0"
+  }
+}
