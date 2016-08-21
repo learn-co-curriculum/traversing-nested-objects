@@ -126,9 +126,9 @@ function find(array, criteriaFn) {
       }
     }
 
-    // after pushing any children of `current` (if there
+    // after pushing any children (if there
     // are any) of `current` onto `next`, we want to take
-    // the first first element of `next` and make it the
+    // the first element of `next` and make it the
     // new `current` for the next pass of the `while`
     // loop
     current = next.shift()
@@ -152,3 +152,5 @@ Can you implement breadth-first search in such a way that it will work for both 
 ## Resources
 
 - [breadth-first search](https://en.wikipedia.org/wiki/Breadth-first_search)
+
+<p class='util--hide'>View <a href='https://learn.co/lessons/traversing-nested-objects'>Traversing Nested Objects</a> on Learn.co and start learning to code for free.</p>
