@@ -90,7 +90,7 @@ function find(array, criteriaFn) {
 }
 ```
 
-The above will work for a flat array — but what if `array` is like `collections` and we want to find the first element that's `> 5`? We'll need some way to move down the levels of the array (like we described above).
+The above will work for a flat array — but what if `array` is like `collections` and we want to find the first element that's `> 5`? We'll need some way to move down the levels of the array (like we described above).  NOTE: The Breadth-First Search below does NOT match the traversal path above.  Above, once we found array [5,[6]] we dug right into it, instead of the examining it TOP LEVEL i.e. same level as 4 and 3.  The BFS below jumps right from array [5,[6]] to element 3 (at same level) and does NOT dig into [5,[6]] until it examines 3.
 
 Follow along with the code below — we know it's a little tricky, but be sure to read the comments!
 
