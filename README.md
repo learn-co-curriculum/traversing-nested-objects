@@ -139,7 +139,7 @@ function find(array, criteriaFn) {
 }
 ```
 
-Type the code (you can exclude the comments) above into your console and run it a few times. Try it with `collections` and the function `n => n > 5` — does it return the result you'd expect? What about if we try the function `n => (typeof n === 'number' && n > 5)`?
+Type the code (you can exclude the comments) above into your console and run it a few times. YOU MIGHT EVEN TRY RUNNING IT WITH DEBUGGER TO SEE HOW THE FN JUMPS LOOKS AT [5,[6]] AS AN ARRAY, WITHOUT WITHOUT LOOKING AT ITS INNER ELEMENTS, AND THEN LOOKS AT 3.  IT ADDS [5,[6]] AFTER 3 WHILE PROCESSING, THEREBY SWITCHING THEIR ORDER FROM WHAT IS ORIGINALLY GIVEN.  Try it with `collections` and the function `n => n > 5` — does it return the result you'd expect? What about if we try the function `n => (typeof n === 'number' && n > 5)`?
 
 Without knowing it, you've just implemented your first **[breadth-first search](https://en.wikipedia.org/wiki/Breadth-first_search)**! Congratulations!
 
