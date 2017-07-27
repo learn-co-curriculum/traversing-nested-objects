@@ -147,7 +147,7 @@ Breadth-first search is one of the main algorithms (that's right, you've conquer
 
 ## A challenge, should you choose to accept it
 
-Can you implement breadth-first search in such a way that it will work for both nested objects and nested arrays (or even — gasp! — a mix of both)?
+Can you modify the breadth-first search algorithm in such a way that it will traverse both nested objects and nested arrays (or even — gasp! — a mix of both)?
 
 ## Resources
 
