@@ -2,10 +2,6 @@
   "name": "traversing-nested-objects",
   "version": "0.1.0",
   "description": "Practice looping through nested objects",
-  "engines": {
-    "node": "6.x",
-    "npm": "3.x"
-  },
   "main": "index.js",
   "repository": {
     "type": "git",
