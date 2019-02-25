@@ -90,6 +90,8 @@ function find(array, criteriaFn) {
 }
 ```
 
+> **REMEMBER** In JavaScript, functions are "first class data" just like `Number`s. It's probably not surrprising to imagine writing: `find( [1,2,["a", "b"]], 3.14)` or `find( [1,2,["a", "b"]], "Byron the Poodle")`. Since functions are first-class data, just like `Number`s, it means that the following code shouldn't stay foreign to you: `find( [1,2,["a", "b"]], function(someNumber){ return someNumber % 2 === 0} )`. In fact, writing functions that test some condition (a "criteria function") is ***so*** common, JavaScript even has an advanced syntax for writing functions that do one evaluation and return the value: _the arrow function syntax_. Thus we could write: `find( [1,2,["a", "b"]], someNumber => someNumber % 2 === 0 )`. This code would do something like find all the members in the array that are even.
+
 The above will work for a flat array — but what if `array` is like `collections` and we want to find the first element that's `> 5`? We'll need some way to move down the levels of the array (like we described above).
 
 Follow along with the code below — we know it's a little tricky, but be sure to read the comments!
