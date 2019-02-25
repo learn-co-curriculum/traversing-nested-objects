@@ -112,7 +112,13 @@ function find(array, criteriaFn) {
   // we exhaust `next` and, below, attempt to
   // `shift()` `undefined` (when `next` is empty)
   // onto `current`, we'll exit the loop
-  while (current) {
+  //
+  // Note that we had to add on this || statement
+  // if current is the number 0 it won't be run in the
+  // loop. Recall your truthy / falsey rules! This is
+  // a subtle bug that went unnoticed in this code for
+  // many years!
+  while (current || current === 0) {
     // if `current` satisfies the `criteriaFn`, then
     // return it — recall that `return` will exit the
     // entire function!
