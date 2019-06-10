@@ -160,7 +160,9 @@ we're really doing is:
 **Note:** JavaScript is flexible enough that we can mix the objects and arrays
 together.
 
-## "Use the `for`ce, Luke!"
+## Find an Element in a Nested Array
+
+### Use `for`
 
 What if we have criteria for finding an element that we know is in a nested data
 structure? Let's implement a simple `find` function that takes two arguments: an
@@ -273,8 +275,6 @@ conquered an algorithm) used to search through nested objects. It earned its
 name because it looks at the siblings of an object (the elements that are on the
 same level) before looking at the children (the elements that are one or more
 levels down).
-
-## Find an Element in a Nested Array
 
 ### A Challenge, Should You Choose to Accept It
 
