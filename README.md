@@ -55,7 +55,9 @@ looped over an array containing objects. So it should be familiar!
 How would you imagine we'd access the `yearsHeld` field? 
 Let's try:
 
-```person.yearsHeld```
+``` javascript
+person.yearsHeld
+```
 
 We should see `undefined`. However, we can see that
 `yearsHeld` is a property of `occupation`, which in turn is a property of
@@ -65,7 +67,9 @@ is not defined globally. It's only a property of `person`.
 
 Let's try:
 
-```person.occupation```
+``` javascript
+person.occupation
+```
 
 We should see this printed to the console:
 
@@ -77,7 +81,7 @@ That suggests that if we type:
 
 ```person.occupation.yearsHeld```
 
-We should not see the `yearsHeld` value:
+We should now see the `yearsHeld` value:
 
 ``` javascript
 2
@@ -107,27 +111,27 @@ Given the above nested array, how would we get the number `6`?
 
 * First, we'd need the second element of `numberCollections`:
 
-```
+``` javascript
 numberCollections[1]
 //=> [2, [4, [5, [6]], 3]
 ```
 * Then we'd need the second element of that element:
 
-```
+``` javascript
 numberCollections[1][1]
 //=> [4, [5, [6]], 3]
 ```
 
 * Then get the second element of _that_ element:
 
-```
+``` javascript
 numberCollections[1][1][1]
 //=> [5, [6]]
 ```
 
 * And again:
 
-```
+``` javascript
 numberCollections[1][1][1][1]
 //=> [6]
 ```
@@ -135,12 +139,12 @@ numberCollections[1][1][1][1]
 * Finally, the first element of that element to return
 the number, instead of an `Array`:
 
-```
+``` javascript
 numberCollections[1][1][1][1][0]
 //=> 6
 ```
 
-That's can be a lot to keep track of. Just remember that each lookup (square
+That can be a lot to keep track of. Just remember that each lookup (square
 brackets) selects a different array for each subsequent lookup. To recap, what
 we're really doing is:
 
@@ -185,9 +189,10 @@ function find(array, criteriaFn) {
 > write: `find( [1,2,["a", "b"]], someNumber => someNumber % 2 === 0 )`. This
 > code would do something like find all the members in the array that are even.
 
-The above will work for a flat array — but what if `array` is like `numberCollections`
-and we want to find the first element that's `> 5`? We'll need some way to move
-down the levels of the array (like we described above).
+The above will work for a flat array — but what if `array` looks like the
+`numberCollections` nested array and we want to find the first element that's
+`> 5`? We'll need some way to move down the levels of the array (like we described
+above).
 
 Follow along with the code below — we know it's a little tricky, but be sure to
 read the comments!
@@ -249,15 +254,15 @@ a few times.
 Try it with the `numberCollections` nested array and the function
 `number => number > 5`.
 
-```
+``` javascript
 find(numberCollections, number => number > 5)
 ```
 
-Does it return the result you'd expect? What about if we try this function:
-```number => (typeof number === 'number' && number > 5)```
+Does it return the result you'd expect? What about if we pass this into
+`criteriaFn`?
 
-```
-find(numberCollections, number => (typeof number === 'number' && number > 5))
+``` javascript
+number => (typeof number === 'number' && number > 5)
 ```
 
 Without knowing it, you've just implemented your first **[breadth-first
