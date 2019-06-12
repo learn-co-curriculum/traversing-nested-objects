@@ -9,14 +9,14 @@ Traversing Nested Objects
 
 ## Introduction
 
-When we're looking for occurrences of a word or concept in a book, we often turn
-to the index. The index tells us where we can find more information on that
-concept — instead of, like a dictionary that gives us a definition, it gives us
-a _list_ that we can use to look up information. Additionally, it might include
-information that is related to the heading that we looked up in a _sublist_. We
-map the connections between these lists in our heads, and it doesn't cause any
-issues to think of one list containing other lists. (The index itself is, after
-all, a kind of list.)
+When we're looking for occurrences of a word or concept in a book, we often
+turn to the index. The index tells us where we can find more information on
+that concept by giving us a list (or page numbers) that we can use to look up
+more information in the book. Additionally, it might include information that
+is related to the heading that we looked up in a _sublist_ (e.g. Animals >
+Vertebrate; Animals > Invertebrate). We link the connections between these
+lists in our heads, and it doesn't cause any issues to think of one list
+containing other lists. The index itself is, after all, a kind of list.
 
 ## Explain What a Nested Object Looks Like
 
@@ -97,11 +97,16 @@ for each field that we wanted to access (`person`, `occupation`, and
 done `person.pets[1].name`. Notice that we need to specify the _index_ in the
 `pets` array of the pet that we want (`[1]`).
 
-Working with arrays is very similar. Instead of named properties of objects such
-as `person` (and sub-objects such as `occupation` and `yearsHeld`), we have
-indexes of arrays (and sub-arrays). 
+We're going to get more abstract. In the above example, we had a name for each
+field that we wanted to access (`person`, `occupation`, and `yearsHeld`). If we
+had wanted to access the second pet's name, we could have done
+`person.pets[1].name` — notice that we need to specify the index in the `pets`
+array of the pet that we want.
 
-Let's take a look at this nested array of numbers:
+Working with arrays isn't all that different. It's just that instead of named
+properties of objects (and sub-objects), we have indexes of arrays (and
+sub-arrays). And, of course, JavaScript is flexible enough that we can mix the
+two:
 
 ``` javascript
 const numberCollections = [1, [2, [4, [5, [6]], 3]]]
