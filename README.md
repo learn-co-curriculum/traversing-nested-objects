@@ -1,7 +1,6 @@
-Traversing Nested Objects
----
+# Traversing Nested Objects
 
-## Objectives
+## Learning Goals
 
 1. Explain what a nested object looks like
 2. Describe how to access inner properties
@@ -9,14 +8,14 @@ Traversing Nested Objects
 
 ## Introduction
 
-When we're looking for occurrences of a word or concept in a book, we often
-turn to the index. The index tells us where we can find more information on
-that concept by giving us a list (or page numbers) that we can use to look up
-more information in the book. Additionally, it might include information that
-is related to the heading that we looked up in a _sublist_ (e.g. Animals >
-Vertebrate; Animals > Invertebrate). We link the connections between these
-lists in our heads, and it doesn't cause any issues to think of one list
-containing other lists. The index itself is, after all, a kind of list.
+When we're looking for occurrences of a word or concept in a book, we often turn
+to the index. The index tells us where we can find more information on that
+concept by giving us a list (or page numbers) that we can use to look up more
+information in the book. Additionally, it might include information that is
+related to the heading that we looked up in a _sublist_ (e.g. Animals >
+Vertebrate; Animals > Invertebrate). We link the connections between these lists
+in our heads, and it doesn't cause any issues to think of one list containing
+other lists. The index itself is, after all, a kind of list.
 
 ## Explain What a Nested Object Looks Like
 
@@ -30,7 +29,7 @@ be other objects**.
 
 Type (don't just copy!) the following into your console to see what we mean:
 
-``` javascript
+```javascript
 const person = {
   name: "Terrance Roberts",
   occupation: {
@@ -52,38 +51,39 @@ looped over an array containing objects. So it should be familiar!
 
 ## Describe How to Access Inner Properties
 
-How would you imagine we'd access the `yearsHeld` field? 
+How would you imagine we'd access the `yearsHeld` field?
 Let's try:
 
-``` javascript
+```javascript
 person.yearsHeld
 ```
 
-We should see `undefined`. However, we can see that
-`yearsHeld` is a property of `occupation`, which in turn is a property of
-`person`.
-If we try ``occupation.yearsHeld`, that'll throw an error because `occupation`
-is not defined globally. It's only a property of `person`.
+We should see `undefined`. However, we can see that `yearsHeld` is a property of
+`occupation`, which in turn is a property of `person`. If we try
+`occupation.yearsHeld`, that'll throw an error because `occupation` is not
+defined globally. It's only a property of `person`.
 
 Let's try:
 
-``` javascript
+```javascript
 person.occupation
 ```
 
 We should see this printed to the console:
 
-``` javascript
+```javascript
 { title: "District Manager", yearsHeld: 2 }
 ```
 
 That suggests that if we type:
 
-```person.occupation.yearsHeld```
+```javascript
+person.occupation.yearsHeld
+```
 
 We should now see the `yearsHeld` value:
 
-``` javascript
+```javascript
 2
 ```
 
@@ -108,35 +108,36 @@ properties of objects (and sub-objects), we have indexes of arrays (and
 sub-arrays). And, of course, JavaScript is flexible enough that we can mix the
 two:
 
-``` javascript
+```javascript
 const numberCollections = [1, [2, [4, [5, [6]], 3]]]
 ```
 
-Given the above nested array, how would we get the number `6`? 
+Given the above nested array, how would we get the number `6`?
 
 * First, we'd need the second element of `numberCollections`:
 
-``` javascript
+```javascript
 numberCollections[1]
 //=> [2, [4, [5, [6]], 3]
 ```
+
 * Then we'd need the second element of that element:
 
-``` javascript
+```javascript
 numberCollections[1][1]
 //=> [4, [5, [6]], 3]
 ```
 
 * Then get the second element of _that_ element:
 
-``` javascript
+```javascript
 numberCollections[1][1][1]
 //=> [5, [6]]
 ```
 
 * And again:
 
-``` javascript
+```javascript
 numberCollections[1][1][1][1]
 //=> [6]
 ```
@@ -144,7 +145,7 @@ numberCollections[1][1][1][1]
 * Finally, the first element of that element to return
 the number, instead of an `Array`:
 
-``` javascript
+```javascript
 numberCollections[1][1][1][1][0]
 //=> 6
 ```
@@ -153,7 +154,7 @@ That can be a lot to keep track of. Just remember that each lookup (square
 brackets) selects a different array for each subsequent lookup. To recap, what
 we're really doing is:
 
-``` javascript
+```javascript
 [1, [2, [4, [5, [6]], 3]]] // numberCollections
 [2, [4, [5, [6]], 3]]      // numberCollections[1]
 [4, [5, [6]], 3]           // numberCollections[1][1]
@@ -174,7 +175,7 @@ structure? Let's implement a simple `find` function that takes two arguments: an
 array (which can contain sub-arrays) and a function that returns `true` for the
 thing that we're looking for.
 
-``` javascript
+```javascript
 function find(array, criteriaFn) {
   for (let i = 0; i < array.length; i++) {
     if (criteriaFn(array[i])) {
@@ -204,7 +205,7 @@ above).
 Follow along with the code below — we know it's a little tricky, but be sure to
 read the comments!
 
-``` javascript
+```javascript
 function find(array, criteriaFn) {
   // initialize two variables, `current`, and `next`
   // `current` keeps track of the element that we're
@@ -256,19 +257,19 @@ function find(array, criteriaFn) {
 ```
 
 Type the code (you can exclude the comments) above into your console and run it
-a few times. 
+a few times.
 
 Try it with the `numberCollections` nested array and the function
 `number => number > 5`.
 
-``` javascript
+```javascript
 find(numberCollections, number => number > 5)
 ```
 
 Does it return the result you'd expect? What about if we pass this into
 `criteriaFn`?
 
-``` javascript
+```javascript
 number => (typeof number === 'number' && number > 5)
 ```
 
@@ -288,6 +289,6 @@ traverse both nested objects and nested arrays (or even a mix of both)?
 
 ## Resources
 
-- [breadth-first search](https://en.wikipedia.org/wiki/Breadth-first_search)
+* [breadth-first search](https://en.wikipedia.org/wiki/Breadth-first_search)
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/traversing-nested-objects'>Traversing Nested Objects</a> on Learn.co and start learning to code for free.</p>
