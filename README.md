@@ -97,12 +97,6 @@ for each field that we wanted to access (`person`, `occupation`, and
 done `person.pets[1].name`. Notice that we need to specify the _index_ in the
 `pets` array of the pet that we want (`[1]`).
 
-We're going to get more abstract. In the above example, we had a name for each
-field that we wanted to access (`person`, `occupation`, and `yearsHeld`). If we
-had wanted to access the second pet's name, we could have done
-`person.pets[1].name` — notice that we need to specify the index in the `pets`
-array of the pet that we want.
-
 Working with arrays isn't all that different. It's just that instead of named
 properties of objects (and sub-objects), we have indexes of arrays (and
 sub-arrays). And, of course, JavaScript is flexible enough that we can mix the
