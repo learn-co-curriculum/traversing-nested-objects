@@ -112,7 +112,7 @@ Given the above nested array, how would we get the number `6`?
 
 ```javascript
 numberCollections[1]
-//=> [2, [4, [5, [6]], 3]
+//=> [2, [4, [5, [6]], 3]]
 ```
 
 * Then we'd need the second element of that element:
