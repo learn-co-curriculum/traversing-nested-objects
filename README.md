@@ -284,4 +284,3 @@ traverse both nested objects and nested arrays (or even a mix of both)?
 ## Resources
 
 * [breadth-first search](https://en.wikipedia.org/wiki/Breadth-first_search)
-
