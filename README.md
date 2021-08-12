@@ -166,8 +166,9 @@ together.
 
 What if we have criteria for finding an element that we know is in a nested data
 structure? Let's implement a simple `find` function that takes two arguments: an
-array (which can contain sub-arrays) and a function that returns `true` for the
-thing that we're looking for.
+array (which can contain sub-arrays) and a function (`criteriaFn` in the example
+below) that defines the criteria for what we're looking for and returns `true` if
+a matching element is found.
 
 ```javascript
 function find(array, criteriaFn) {
